@@ -1,0 +1,16 @@
+---
+title: Skupper
+---
+
+<div class="title-bar">
+  <div>
+    <div>Namespace: storefront</div>
+    <h1>{{page.title}}</h1>
+  </div>
+  <nav>
+  </nav>
+</div>
+
+<p>Skupper is not yet set up in this namespace.</p>
+
+<a href="site/index.html" class="small-button">Set up Skupper</a>

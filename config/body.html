@@ -1,0 +1,27 @@
+<body>
+  {{page.include("config/header.html")}}
+
+  <section>
+    <div id="-browser">
+      <nav>
+        <a>Workloads</a>
+        <a>Networking</a>
+        <a>Storage</a>
+        <a>Extensions</a>
+        <a class="selected">&nbsp;&nbsp;&nbsp;&nbsp;Skupper</a>
+      </nav>
+      <main>
+        <div id="-path-nav">
+
+{{path_nav(page)}}
+
+        </div>
+
+{{page.content}}
+
+      </main>
+    </div>
+  </section>
+
+  {{page.include("config/footer.html")}}
+</body>

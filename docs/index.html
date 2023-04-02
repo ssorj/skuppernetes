@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Three Hour Tour</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic|Ubuntu+Mono:400" type="text/css"/>
+    <link rel="stylesheet" href="/three-hour-tour/main.css" type="text/css"/>
+    <link rel="icon" href="" type="image/png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" defer="defer">
+    <script type="text/javascript" src="/three-hour-tour/main.js" defer="defer"></script>
+
+
+
+  </head>
+
+<body>
+  <header>
+  <div>
+    <nav id="-left-site-nav">
+      <a href="/three-hour-tour/index.html" id="-logotype"><span class="material-icons-outlined">anchor</span> Three Hour Tour</a>
+    </nav>
+    <nav id="-right-site-nav">
+      <a href="">Hi, Ginger</a>
+    </nav>
+  </div>
+</header>
+
+
+  <section>
+    <div id="-browser">
+      <nav>
+        <a href="/three-hour-tour/index.html">Site</a>
+        <a href="/three-hour-tour/network/index.html">Network</a>
+        <a href="/three-hour-tour/services/index.html">Services</a>
+        <a href="/three-hour-tour/deployments/index.html">Deployments</a>
+        <a href="/three-hour-tour/processes/index.html">Processes</a>
+      </nav>
+      <main>
+        <div id="-path-nav">
+
+<nav class="path-nav"></nav>
+
+        </div>
+
+
+<div class="title-bar">
+  <h1>Site <span class="name">na-east</span></h1>
+  <nav>
+    <a href="" class="small-button">Download a link token</a>
+  </nav>
+</div>
+
+<div class="tabs">
+  <nav>
+    <a href="?tab=overview">Overview</a>
+    <a href="?tab=details">Details</a>
+    <a href="?tab=tokens">Tokens</a>
+    <a href="?tab=sites">Linked sites</a>
+  </nav>
+
+  <div id="overview">
+    <h2>Status</h2>
+
+    <p>This site is currently linked to <a href="?tab=sites">2 other sites</a>.
+    There are <a href="/services/index.html">5 services</a> exposed on the network.</p>
+
+    <h2>Creating a link to a remote site</h2>
+
+    <ol>
+      <li>
+        <p><b>Remote site:</b> Go to the Skupper console at the remote site (not this
+        console).</p>
+      </li>
+
+      <li>
+        <p><b>Remote site:</b> Click the <b>Download a link token</b> button.  Save the
+        token to a local file.</p>
+      </li>
+
+      <li>
+        <p><b>This site:</b> Click the <b>Upload a link token</b> button below.  Provide
+        the token file from the previous step.</p>
+
+        <nav>
+          <a href="" class="small-button">Upload a link token</a>
+        </nav>
+      </li>
+    </ol>
+
+    <h2>Connecting to services on the network</h2>
+
+    <table style="width: 50%;"><tbody><tr><th>Service</th><th>Connection URL</th></tr><tr><td>frontend</td><td><a href="">http://frontend:8080</a></td></tr><tr><td>inventory</td><td><a href="">http://inventory:8080</a></td></tr><tr><td>orders</td><td><a href="">http://orders:8080</a></td></tr><tr><td>database</td><td><a href="">jdbc://database:5432</a></td></tr><tr><td>reviews</td><td><a href="">http://reviews:8080</a></td></tr></tbody></table>
+
+    <h2>More information</h2>
+
+    <ul>
+      <li><a href="">Linking sites using the command line</a></li>
+      <li><a href="">Exposing services using the command line</a></li>
+    </ul>
+  </div>
+  <div id="details">
+  </div>
+  <div id="tokens">
+    <div class="title-bar">
+      <h1>Tokens</h1>
+      <nav>
+        <a href="" class="small-button">Create a token</a>
+      </nav>
+    </div>
+
+    <table><tbody><tr><th>Name</th><th>Status</th><th>Use count</th><th>Use limit</th><th>Expires</th><th>Created</th><th>Actions</th></tr><tr><td><a href="company-co-497c/index.html">company-co-497c</a></td><td>Active</td><td>0</td><td>1</td><td>Never</td><td>3 minutes ago</td><td><a class="table-button" href="">Download</a> <a class="table-button" href="">Revoke</a></td></tr><tr><td><a href="company-co-497c/index.html">company-co-af89</a></td><td>Active</td><td>-</td><td>-</td><td>In 6 hours</td><td>2 days ago</td><td><a class="table-button" href="">Download</a> <a class="table-button" href="">Revoke</a></td></tr><tr><td><a href="company-co-497c/index.html">company-co-f8fa</a></td><td>Revoked</td><td>-</td><td>-</td><td>-</td><td>2 days ago</td><td><a class="table-button" href="">Download</a> <a class="table-button" href="">Revoke</a></td></tr></tbody></table>
+  </div>
+  <div id="sites">
+    <div class="title-bar">
+      <h1>Linked sites</h1>
+    </div>
+
+    <table><tbody><tr><th>Name</th><th>Status</th><th>Site type</th><th>Cost</th><th>Linked</th><th>Actions</th></tr><tr><td><a href="na-east/index.html">na-west</a></td><td>OK</td><td>Podman</td><td>1</td><td>1/8/2020</td><td><a class="table-button" href="">Unlink</a></td></tr><tr><td><a href="na-east/index.html">headquarters</a></td><td>Error: Unreachable</td><td>OpenShift</td><td>1</td><td>3/15/2020</td><td><a class="table-button" href="">Unlink</a></td></tr></tbody></table>
+  </div>
+</div>
+
+
+      </main>
+    </div>
+  </section>
+
+  <footer>
+  <div>
+    <!-- <a style="color: #ccc; font-size: 0.9em; font-style: italic;" href="/three-hour-tour/networks-alternate/index.html">Alternate network index</a><br> -->
+    <!-- <a style="color: #ccc; font-size: 0.9em; font-style: italic;" href="/three-hour-tour/site/index.html">Remote site</a> -->
+  </div>
+</footer>
+
+</body>
+
+
+</html>

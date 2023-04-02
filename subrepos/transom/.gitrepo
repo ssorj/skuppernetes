@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:ssorj/transom.git
+	branch = main
+	commit = 7681e93b92253a99fb0162887b2ee24c0e345ada
+	parent = 7410ebb56e6816374e093d0f00edbb604d3adc39
+	method = merge
+	cmdver = 0.4.5

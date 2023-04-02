@@ -1,0 +1,111 @@
+---
+title: Skupper
+---
+
+<div class="title-bar">
+  <div>
+    <div>Namespace: storefront</div>
+    <h1>{{page.title}}</h1>
+  </div>
+
+  <nav>
+    <a class="small-button">Go to the Skupper console</a>
+  </nav>
+</div>
+
+<div class="tabs">
+  <nav>
+    <a href="?tab=overview">Overview</a>
+    <a href="?tab=details">Details</a>
+    <a href="?tab=links">Links</a>
+    <a href="?tab=tokens">Tokens</a>
+    <a href="?tab=services">Services</a>
+  </nav>
+
+  <div id="overview">
+    <h2>Status</h2>
+
+    <p>This namespace is linked to <a href="?tab=links">2 remote
+    sites</a>.</p>
+
+    <h2>Linking this namespace to remote sites</h2>
+
+    <p><i>Remote site:</i> Obtain a token from the remote site.  Save
+      the token to a local file.</p>
+
+    <p><i>This namespace:</i> Click the <b>Create link</b> button
+      below.  Provide the token file from the remote site.</p>
+
+    <nav>
+      <a class="small-button">Create link</a>
+    </nav>
+
+    <h2>Exposing services from this namespace to remote sites</h2>
+
+    <p>{{lipsum(15)}}</p>
+
+    <nav>
+      <a class="small-button">Add provided service</a>
+    </nav>
+
+    <h2>Accessing services at remote sites from this namespace</h2>
+
+    <p>{{lipsum(15)}}</p>
+
+    <nav>
+      <a class="small-button">Add required service</a>
+    </nav>
+
+    <h2>More information</h2>
+
+    <ul>
+      <li><a>Linking sites using the command line</a></li>
+      <li><a>Exposing services using the command line</a></li>
+    </ul>
+  </div>
+  <div id="details">
+  </div>
+  <div id="links">
+    <div class="section-bar">
+      <h2>Links</h2>
+      <nav>
+        <a class="small-button">Create link</a>
+      </nav>
+    </div>
+
+    {{link_table}}
+
+    <div class="section-bar">
+      <h2>Links from remote sites</h2>
+    </div>
+  </div>
+  <div id="tokens">
+    <div class="section-bar">
+      <h2>Tokens</h2>
+      <nav>
+        <a class="small-button">Create token</a>
+      </nav>
+    </div>
+
+    {{token_table}}
+  </div>
+  <div id="services">
+    <div class="section-bar">
+      <h2>Provided services</h2>
+      <nav>
+        <a class="small-button">Add provided service</a>
+      </nav>
+    </div>
+
+    <p>XXX</p>
+
+    <div class="section-bar">
+      <h2>Required services</h2>
+      <nav>
+        <a class="small-button">Add required service</a>
+      </nav>
+    </div>
+
+    <p>XXX</p>
+  </div>
+</div>
