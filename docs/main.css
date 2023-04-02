@@ -406,20 +406,25 @@ section > div {
 .title-bar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 0.8em;
-    height: 2em;
 }
 
 .title-bar > * {
     margin: 0;
 }
 
-.title-bar > h1 {
+.title-bar > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-bar > div > h1 {
+    margin-top: 0.7em;
+    margin-bottom: 0.2em;
     font-weight: 300;
 }
 
-.title-bar > h1 span.name {
+.title-bar > div > h1 span.name {
     font-weight: 400;
 }
 
@@ -588,6 +593,7 @@ a.table-button {
     border: 1px solid #999;
     border-radius: 0.2em;
     padding: 0.05em 0.6em;
+    margin: 0 0.4em 0 0;
     text-align: center;
     color: black;
     font-weight: 400;
