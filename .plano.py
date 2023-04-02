@@ -25,7 +25,7 @@ def publish(verbose=False):
     Publish site output
     """
 
-    ENV["SITE_URL"] = "/three-hour-tour"
+    ENV["SITE_URL"] = "/skuppernetes"
 
     with project_env():
         args = ["render", site.config_dir, site.input_dir, "docs", "--force"]
