@@ -1,0 +1,51 @@
+---
+body_template: config/excursion.html
+---
+
+<h1>Interlude</h1>
+
+<form>
+
+<h2>Kubernetes resource</h2>
+
+<pre>
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-site
+data:
+  name: storefront
+  ingress: null
+  routers: 1
+  router-cpu: 1.0
+  router-cpu-limit: 1.0
+</pre>
+
+<h2>Skupper YAML</h2>
+
+<pre>
+site:
+  name: storefront
+  ingress: null
+  routers: 1
+  router-cpu: 1.0
+  router-cpu-limit: 1.0
+</pre>
+
+
+<h2>Skupper command</h2>
+
+<pre>
+skupper init \
+  --site-name storefront \
+  --ingress none \
+  --routers 1 \
+  --router-cpu 1.0 \
+  --router-cpu-limit 1.0
+</pre>
+
+<nav class="form-nav">
+  <a class="big-button" href="index.html?tab=details">Continue</a>
+</nav>
+
+</form>

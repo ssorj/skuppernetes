@@ -1,0 +1,19 @@
+---
+body_template: config/excursion.html
+---
+
+<h1>Result</h1>
+
+<form>
+
+<h2>YAML</h2>
+
+<pre>
+XXX
+</pre>
+
+<nav class="form-nav">
+  <a class="big-button" href="index.html">Dismiss</a>
+</nav>
+
+</form>

@@ -55,12 +55,17 @@ data = (
 link_table = html_table(data, headings=headings, cell_fn=cell)
 
 props = (
-    ("Name", "na-east"),
-    ("Status", "OK"),
-    ("ID", "e8f4c2ca-90cf-4882-9edc-5e9a802a3dab"),
+    ("Name", "storefront"),
+    ("Ingress", "None"),
+    ("Routers", 1),
+    ("Router CPU request", 1.0),
+    ("Router CPU limit", 1.0),
+)
+
+site_settings = html_table(props, class_="properties")
+
+props = (
     ("Version", "1.2.3"),
-    ("Namespace", "na-east-prod"),
-    ("Cost", 2),
     ("Created", "2 days ago",),
 )
 
