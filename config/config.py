@@ -54,9 +54,19 @@ data = (
 
 link_table = html_table(data, headings=headings, cell_fn=cell)
 
+headings = "Name", "Created"
+
+data = (
+    ("delivery-truck-201", "10/18/2021"),
+    ("delivery-truck-202", "11/8/2021"),
+)
+
+incoming_link_table = html_table(data, headings=headings)
+
 props = (
     ("Name", "storefront"),
     ("Ingress", "None"),
+    ("Console enabled?", "Yes"),
     ("Routers", 1),
     ("Router CPU request", 1.0),
     ("Router CPU limit", 1.0),

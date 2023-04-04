@@ -100,6 +100,8 @@ title: Skupper
     <div class="section-bar">
       <h2>Links from remote sites</h2>
     </div>
+
+    {{incoming_link_table}}
   </div>
   <div id="tokens">
     <div class="section-bar">

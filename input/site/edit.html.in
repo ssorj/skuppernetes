@@ -32,6 +32,19 @@ body_template: config/excursion.html
   </div>
 </div>
 
+<div class="form-entry">
+  <div class="entry-title">Console enabled?</div>
+  <div class="entry-input">
+    <select id="console-enabled">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </div>
+  <div class="entry-info">
+    {{lipsum(15)}}
+  </div>
+</div>
+
 <h2>Resources </h2>
 
 <div class="form-entry">

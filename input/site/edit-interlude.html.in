@@ -16,6 +16,7 @@ metadata:
 data:
   name: storefront
   ingress: none
+  console: true
   routers: 1
   router-cpu: 1.0
   router-cpu-limit: 1.0
@@ -27,6 +28,7 @@ data:
 skupper init \
   --site-name storefront \
   --ingress none \
+  --enable-console true \
   --routers 1 \
   --router-cpu 1.0 \
   --router-cpu-limit 1.0
