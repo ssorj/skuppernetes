@@ -50,7 +50,7 @@
   </div>
 
   <nav>
-    <a class="small-button">Go to the Skupper console</a>
+    <a class="small-button">Go to the Skupper network console</a>
   </nav>
 </div>
 
@@ -71,14 +71,22 @@
 
     <h2>Linking this namespace to remote sites</h2>
 
-    <p><i>Remote site:</i> Obtain a token from the remote site.  Save
-      the token to a local file.</p>
+    <p>Obtain a token from the remote site.  Save it to a local
+      file.</p>
 
-    <p><i>This namespace:</i> Click the <b>Create link</b> button
-      below.  Provide the token file from the remote site.</p>
+    <p>Click the <b>Create link</b> button below.  Provide the token
+      file from the remote site.</p>
 
     <nav>
-      <a class="small-button">Create link</a>
+      <a href="link/create.html" class="small-button">Create link</a>
+    </nav>
+
+    <h2>Generating tokens for use in linking to this namespace</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.</p>
+
+    <nav>
+      <a href="token/create.html" class="small-button">Create token</a>
     </nav>
 
     <h2>Exposing services from this namespace to remote sites</h2>
@@ -105,12 +113,26 @@
     </ul>
   </div>
   <div id="details">
+    <div class="section-bar">
+      <h2>Settings</h2>
+      <nav>
+        <a href="edit.html" class="small-button">Edit settings</a>
+      </nav>
+    </div>
+
+    <table class="properties"><tbody><tr><td>Name</td><td>storefront</td></tr><tr><td>Ingress</td><td>None</td></tr><tr><td>Console enabled?</td><td>Yes</td></tr><tr><td>Routers</td><td>1</td></tr><tr><td>Router CPU request</td><td>1.0</td></tr><tr><td>Router CPU limit</td><td>1.0</td></tr></tbody></table>
+
+    <div class="section-bar">
+      <h2>Properties</h2>
+    </div>
+
+    <table class="properties"><tbody><tr><td>Version</td><td>1.2.3</td></tr><tr><td>Created</td><td>2 days ago</td></tr></tbody></table>
   </div>
   <div id="links">
     <div class="section-bar">
       <h2>Links</h2>
       <nav>
-        <a class="small-button">Create link</a>
+        <a href="link/create.html" class="small-button">Create link</a>
       </nav>
     </div>
 
@@ -119,16 +141,18 @@
     <div class="section-bar">
       <h2>Links from remote sites</h2>
     </div>
+
+    <table><tbody><tr><th>Name</th><th>Created</th></tr><tr><td>delivery-truck-201</td><td>10/18/2021</td></tr><tr><td>delivery-truck-202</td><td>11/8/2021</td></tr></tbody></table>
   </div>
   <div id="tokens">
     <div class="section-bar">
       <h2>Tokens</h2>
       <nav>
-        <a class="small-button">Create token</a>
+        <a href="token/create.html" class="small-button">Create token</a>
       </nav>
     </div>
 
-    <table><tbody><tr><th>Name</th><th>Use limit</th><th>Expiry</th><th>Created</th><th>Actions</th></tr><tr><td><a>token-497c</a></td><td>1</td><td>Never</td><td>3 minutes ago</td><td><a class="table-button">Download</a> <a class="table-button">Delete</a></td></tr><tr><td><a>token-af89</a></td><td>None</td><td>24 hours</td><td>2 hours ago</td><td><a class="table-button">Download</a> <a class="table-button">Delete</a></td></tr></tbody></table>
+    <table><tbody><tr><th>Name</th><th>Use limit</th><th>Expiry</th><th>Created</th><th>Actions</th></tr><tr><td><a>token-497c</a></td><td>1</td><td>15 minutes</td><td>3 minutes ago</td><td><a class="table-button">Download</a> <a class="table-button">Delete</a></td></tr><tr><td><a>token-af89</a></td><td>None</td><td>24 hours</td><td>2 hours ago</td><td><a class="table-button">Download</a> <a class="table-button">Delete</a></td></tr></tbody></table>
   </div>
   <div id="services">
     <div class="section-bar">

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Skuppernetes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic|Ubuntu+Mono:400" type="text/css"/>
+    <link rel="stylesheet" href="/skuppernetes/main.css" type="text/css"/>
+    <link rel="icon" href="" type="image/png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" defer="defer">
+    <script type="text/javascript" src="/skuppernetes/main.js" defer="defer"></script>
+
+
+
+  </head>
+
+<body id="-excursion">
+  <section>
+    <div>
+
+
+<h1>Interlude</h1>
+
+<form>
+
+<h2>Skupper YAML</h2>
+
+<pre>
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-link
+data:
+  token-secret: &lt;token-secret&gt;
+  name: warehouse
+  cost: 1
+</pre>
+
+<h2>Skupper command</h2>
+
+<pre>
+skupper link create &lt;token-file&gt; \
+  --name warehouse \
+  --cost 1
+</pre>
+
+<nav class="form-nav">
+  <a class="big-button" href="../index.html?tab=links">Continue</a>
+</nav>
+
+</form>
+
+
+    </div>
+  </section>
+</body>
+
+
+</html>
