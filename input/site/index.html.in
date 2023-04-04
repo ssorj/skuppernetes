@@ -30,22 +30,22 @@ title: Skupper
 
     <h2>Linking this namespace to remote sites</h2>
 
-    <p>Obtain a token from the remote site.  Save the token to a local
+    <p>Obtain a token from the remote site.  Save it to a local
       file.</p>
 
     <p>Click the <b>Create link</b> button below.  Provide the token
       file from the remote site.</p>
 
     <nav>
-      <a class="small-button">Create link</a>
+      <a href="link/create.html" class="small-button">Create link</a>
     </nav>
 
-    <h2>Generating tokens for linking to this namespace</h2>
+    <h2>Generating tokens for use in linking to this namespace</h2>
 
     <p>{{lipsum(15)}}</p>
 
     <nav>
-      <a class="small-button">Create token</a>
+      <a href="token/create.html" class="small-button">Create token</a>
     </nav>
 
     <h2>Exposing services from this namespace to remote sites</h2>
@@ -91,7 +91,7 @@ title: Skupper
     <div class="section-bar">
       <h2>Links</h2>
       <nav>
-        <a class="small-button">Create link</a>
+        <a href="link/create.html" class="small-button">Create link</a>
       </nav>
     </div>
 
@@ -105,7 +105,7 @@ title: Skupper
     <div class="section-bar">
       <h2>Tokens</h2>
       <nav>
-        <a class="small-button">Create token</a>
+        <a href="token/create.html" class="small-button">Create token</a>
       </nav>
     </div>
 

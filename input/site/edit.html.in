@@ -6,7 +6,7 @@ body_template: config/excursion.html
 
 <form>
 
-<h2>General</h2>
+<h2></h2>
 
 <div class="form-entry">
   <div class="entry-title">Name</div>
@@ -65,7 +65,7 @@ body_template: config/excursion.html
 </div>
 
 <nav class="form-nav">
-  <a class="big-button" href="edit-interlude.html">Save</a>
+  <a class="big-button" href="edit-interlude.html">Submit</a>
 </nav>
 
 </form>

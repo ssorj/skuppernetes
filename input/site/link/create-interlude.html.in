@@ -1,0 +1,34 @@
+---
+body_template: config/excursion.html
+---
+
+<h1>Interlude</h1>
+
+<form>
+
+<h2>Skupper YAML</h2>
+
+<pre>
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-link
+data:
+  token-secret: &lt;token-secret&gt;
+  name: warehouse
+  cost: 1
+</pre>
+
+<h2>Skupper command</h2>
+
+<pre>
+skupper link create &lt;token-file&gt; \
+  --name warehouse \
+  --cost 1
+</pre>
+
+<nav class="form-nav">
+  <a class="big-button" href="../index.html?tab=links">Continue</a>
+</nav>
+
+</form>

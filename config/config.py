@@ -167,7 +167,7 @@ def cell(column_index, value):
 headings = "Name", "Use limit", "Expiry", "Created", "Actions"
 
 data = (
-    ("token-497c", 1, "Never", "3 minutes ago", None),
+    ("token-497c", 1, "15 minutes", "3 minutes ago", None),
     ("token-af89", "None", "24 hours", "2 hours ago", None),
 )
 
@@ -176,7 +176,7 @@ token_table = html_table(data, headings=headings, cell_fn=cell)
 props = (
     ("Name", "token-497c"),
     ("Use limit", 1),
-    ("Expiry", "Never"),
+    ("Expiry", "15 minutes"),
     ("Created", "3 minutes ago"),
 )
 
