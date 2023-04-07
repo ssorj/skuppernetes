@@ -6,7 +6,7 @@ body_template: config/excursion.html
 
 <form>
 
-<h2>Kubernetes resource</h2>
+<h2>Skupper YAML</h2>
 
 <pre>
 apiVersion: v1
@@ -15,15 +15,8 @@ metadata:
   name: skupper-site
 data:
   name: storefront
+  namespace: storefront
 </pre>
-
-<h2>Skupper YAML</h2>
-
-<pre>
-site:
-  name: storefront
-</pre>
-
 
 <h2>Skupper command</h2>
 
