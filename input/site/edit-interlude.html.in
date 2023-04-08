@@ -9,7 +9,7 @@ body_template: config/excursion.html
 <h2>Skupper CLI</h2>
 
 <pre>
-skupper init --site-name east --ingress none --enable-console true \
+skupper init --site-name storefront --ingress none --enable-console true \
     --routers 1 --router-cpu 1.0 --router-cpu-limit 1.0
 </pre>
 
@@ -18,7 +18,7 @@ skupper init --site-name east --ingress none --enable-console true \
 <pre>
 version: 1
 site:
-  name: east
+  name: storefront
   ingress: none
   console-enabled: true
   routers: 1
@@ -36,11 +36,11 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: skupper-config
-  namespace: east
+  namespace: storefront
 data:
   version: 1
   site:
-    name: east
+    name: storefront
     ingress: none
     console-enabled: true
     routers: 1
@@ -56,8 +56,8 @@ data:
 apiVersion: skupper.io/v1alpha1
 kind: Site
 metadata:
-  name: east
-  namespace: east
+  name: storefront
+  namespace: storefront
 spec:
   ingress: none
   consoleEnabled: false

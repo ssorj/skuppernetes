@@ -2,33 +2,72 @@
 body_template: config/excursion.html
 ---
 
-<h1>Interlude</h1>
+<h1>Equivalent operations</h1>
 
 <form>
 
+<h2>Skupper CLI</h2>
+
+<pre>
+skupper token create storefront-token-1.yaml --uses 1 --expiry 15m --name skupper
+</pre>
+
 <h2>Skupper YAML</h2>
+
+<pre>
+version: 1
+site:
+  name: storefront
+  tokens:
+    - name: storefront-token-1
+      auth-name: skupper
+      token-secret: storefront-token-1
+      uses: 1
+      expiry: 15m
+
+# skupper init -f site.yaml
+# kubectl get secret/storefront-token-1 -o jsonpath={.data} | base64 -d &gt; storefront-token-1.yaml
+</pre>
+
+<h2>Skupper YAML embedded in a ConfigMap</h2>
 
 <pre>
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: skupper-token
+  name: skupper-config
+  namespace: storefront
 data:
-  name: token-497c
-  secret-name: skupper-token-497c
+  version: 1
+  site:
+    name: storefront
+    tokens:
+      - name: storefront-token-1
+        auth-name: skupper
+        token-secret: storefront-token-1
+        uses: 1
+        expiry: 15m
+
+# kubectl apply -f site.yaml
+# kubectl get secret/storefront-token-1 -o jsonpath={.data} | base64 -d &gt; storefront-token-1.yaml
+</pre>
+
+<h2>Kubernetes custom resource</h2>
+
+<pre>
+apiVersion: skupper.io/v1alpha1
+kind: Token
+metadata:
+  name: storefront-token-1
+  namespace: storefront
+spec:
+  authName: skupper
+  tokenSecret: storefront-token-1
   uses: 1
   expiry: 15m
 
-# kubectl get secret/skupper-token-497c -o jsonpath={.data} | base64 -d &gt; &lt;token-file&gt;
-</pre>
-
-<h2>Skupper command</h2>
-
-<pre>
-skupper token create &lt;token-file&gt; \
-  --name token-497c \
-  --uses 1 \
-  --expiry 15m
+# kubectl apply -f token.yaml
+# kubectl get secret/storefront-token-1 -o jsonpath={.data} | base64 -d &gt; storefront-token-1.yaml
 </pre>
 
 <nav class="form-nav">

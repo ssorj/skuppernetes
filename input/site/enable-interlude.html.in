@@ -8,14 +8,14 @@ body_template: config/excursion.html
 
 <h2>Skupper CLI</h2>
 
-<pre>$ skupper init --site-name east</pre>
+<pre>$ skupper init --site-name storefront</pre>
 
 <h2>Skupper YAML</h2>
 
 <pre>
 version: 1
 site:
-  name: east
+  name: storefront
 
 # skupper init -f site.yaml
 # skupper bundle create site.yaml bundle.tar.gz
@@ -28,11 +28,11 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: skupper-config
-  namespace: east
+  namespace: storefront
 data:
   version: 1
   site:
-    name: east
+    name: storefront
 
 # kubectl apply -f site.yaml
 </pre>
@@ -43,8 +43,8 @@ data:
 apiVersion: skupper.io/v1alpha1
 kind: Site
 metadata:
-  name: east
-  namespace: east
+  name: storefront
+  namespace: storefront
 
 # kubectl apply -f site.yaml
 </pre>

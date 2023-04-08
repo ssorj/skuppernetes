@@ -117,55 +117,6 @@ data = (
 
 service_table = html_table(data, headings=headings, cell_fn=cell)
 
-props = (
-    ("Name", "frontend"),
-    ("Status", "OK"),
-    ("Created", "3 minutes ago",),
-)
-
-service_properties = html_table(props, class_="properties")
-
-def cell(column_index, value):
-    if column_index == 0:
-        value = html_link(value, href="frontend-2da6/index.html")
-    elif column_index == 5:
-        value = table_button("Delete")
-
-    return f"<td>{value}</td>"
-
-headings = "Name", "Status", "Target", "Site", "Created", "Actions"
-
-data = (
-    ("frontend-2da6", "OK", "deployment/frontend", "na-east (OpenShift)", "2 days ago", None),
-    ("frontend-45cc", "Error: Unreachable", "container/frontend", "na-west (Podman)", "1 day ago", None),
-)
-
-binding_table = html_table(data, headings=headings, cell_fn=cell)
-
-def cell(column_index, value):
-    if column_index == 5:
-        value = table_button("Delete")
-
-    return f"<td>{value}</td>"
-
-headings = "Name", "Status", "Host", "Port", "Created", "Actions"
-
-data = (
-    ("frontend-9d41", "OK", "www.companyco.com", 80, "2 days ago", None),
-)
-
-route_table = html_table(data, headings=headings, cell_fn=cell)
-
-props = (
-    ("Name", "frontend-2da6"),
-    ("Status", "OK"),
-    ("Target", "deployment/frontend"),
-    ("Site", html_link("na-east (OpenShift)", href=f"{site_url}/sites/na-east/index.html")),
-    ("Created", "2 days ago",),
-)
-
-binding_properties = html_table(props, class_="properties")
-
 def cell(column_index, value):
     if column_index == 0:
         value = html_link(value)
@@ -177,14 +128,14 @@ def cell(column_index, value):
 headings = "Name", "Use limit", "Expiry", "Created", "Actions"
 
 data = (
-    ("token-497c", 1, "15 minutes", "3 minutes ago", None),
-    ("token-af89", "None", "24 hours", "2 hours ago", None),
+    ("storefront-token-1", 1, "15 minutes", "3 minutes ago", None),
+    ("storefront-token-2", "None", "24 hours", "2 hours ago", None),
 )
 
 token_table = html_table(data, headings=headings, cell_fn=cell)
 
 props = (
-    ("Name", "token-497c"),
+    ("Name", "storefront-token-1"),
     ("Use limit", 1),
     ("Expiry", "15 minutes"),
     ("Created", "3 minutes ago"),
