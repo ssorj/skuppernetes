@@ -53,7 +53,7 @@ title: Skupper
     <p>{{lipsum(15)}}</p>
 
     <nav>
-      <a class="small-button">Add provided service</a>
+      <a href="provided-service/create.html" class="small-button">Create provided service</a>
     </nav>
 
     <h2>Accessing services at remote sites from this namespace</h2>
@@ -61,7 +61,7 @@ title: Skupper
     <p>{{lipsum(15)}}</p>
 
     <nav>
-      <a class="small-button">Add required service</a>
+      <a href="required-service/create.html" class="small-button">Create required service</a>
     </nav>
 
     <h2>More information</h2>
@@ -117,19 +117,19 @@ title: Skupper
     <div class="section-bar">
       <h2>Provided services</h2>
       <nav>
-        <a class="small-button">Add provided service</a>
+        <a href="provided-service/create.html" class="small-button">Create provided service</a>
       </nav>
     </div>
 
-    <p>XXX</p>
+    {{provided_service_table}}
 
     <div class="section-bar">
       <h2>Required services</h2>
       <nav>
-        <a class="small-button">Add required service</a>
+        <a class="small-button">Create required service</a>
       </nav>
     </div>
 
-    <p>XXX</p>
+    {{required_service_table}}
   </div>
 </div>

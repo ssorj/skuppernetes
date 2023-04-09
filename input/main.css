@@ -291,6 +291,7 @@ a.big-button {
 
 a.small-button {
     display: inline-block;
+    margin-right: 1em;
     border: 1px solid #999;
     border-radius: 0.2em;
     padding: 0.3em 0.7em;
@@ -426,6 +427,7 @@ section > div {
 
 .title-bar > nav > a {
     margin-left: 1em;
+    margin-right: 0;
 }
 
 /* --- */
@@ -446,6 +448,7 @@ section > div {
 
 .section-bar > nav > a {
     margin-left: 1em;
+    margin-right: 0;
 }
 
 /* --- */

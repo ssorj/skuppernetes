@@ -1,0 +1,40 @@
+---
+title: Skupper
+---
+
+<div class="title-bar">
+  <div>
+    <div>Namespace: storefront</div>
+    <h1>Service inventory</h1>
+  </div>
+
+  <nav>
+    <a class="small-button">Go to the Skupper network console</a>
+  </nav>
+</div>
+
+<div class="tabs">
+  <nav>
+    <a>Overview</a>
+  </nav>
+
+  <div id="details">
+    <div class="section-bar">
+      <h2>Settings</h2>
+      <nav>
+        <a href="edit.html" class="small-button">Edit settings</a>
+      </nav>
+    </div>
+
+    <div class="section-bar">
+      <h2>Properties</h2>
+    </div>
+
+    <div class="section-bar">
+      <h2>Ports</h2>
+      <nav>
+        <a href="port/create.html" class="small-button">Add port</a>
+      </nav>
+    </div>
+  </div>
+</div>

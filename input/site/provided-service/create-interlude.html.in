@@ -1,0 +1,62 @@
+---
+body_template: config/excursion.html
+---
+
+<h1>Equivalent operations</h1>
+
+<form>
+
+<h2>Skupper CLI</h2>
+
+<pre>
+# Proposed
+skupper service create orders
+</pre>
+
+<h2>Skupper YAML</h2>
+
+<pre>
+version: 1
+site:
+  name: storefront
+  provided-services:
+    - name: orders
+
+# skupper init -f site.yaml
+</pre>
+
+<h2>Skupper YAML embedded in a ConfigMap</h2>
+
+<pre>
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-config
+  namespace: storefront
+ndata:
+  version: 1
+  site:
+    name: storefront
+    provided-services:
+      - name: orders
+
+# kubectl apply -f site.yaml
+</pre>
+
+<h2>Kubernetes custom resource</h2>
+
+<pre>
+apiVersion: skupper.io/v1alpha1
+kind: ProvidedService
+metadata:
+  name: orders
+  namespace: storefront
+
+# kubectl apply -f resource.yaml
+</pre>
+
+<nav class="form-nav">
+  <a class="big-button" href="index.html">Continue</a>
+</nav>
+
+</form>

@@ -1,0 +1,88 @@
+---
+body_template: config/excursion.html
+---
+
+<h1>Equivalent operations</h1>
+
+<form>
+
+<h2>Skupper CLI</h2>
+
+<pre>
+skupper service create inventory 8080 --protocol tcp
+
+# How to handle multiple ports:
+
+# Current
+skupper service create inventory 8080 8081 --protocol tcp # What about http for port 8081?
+
+# Proposal 1 - Break out *additional* ports, beyond the first one
+skupper service create inventory 8080 --protocol tcp
+skupper service add-port inventory 8081 --target-port 9091 --protocol http
+
+# Proposal 2 - Break out all ports
+skupper service create inventory
+skupper service add-port inventory 8080 --name api --protocol tcp --target-port 9090
+skupper service add-port inventory 8081 --name management --protocol http --target-port 9091
+</pre>
+
+<h2>Skupper YAML</h2>
+
+<pre>
+version: 1
+site:
+  name: storefront
+  required-services:
+    - name: inventory
+      ports:
+        - port: 8080
+          name: api
+          protocol: tcp
+
+# skupper init -f site.yaml
+</pre>
+
+<h2>Skupper YAML embedded in a ConfigMap</h2>
+
+<pre>
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-config
+  namespace: storefront
+data:
+  version: 1
+  site:
+    name: storefront
+    required-services:
+      - name: inventory
+        ports:
+          - port: 8080
+            name: api
+            protocol: tcp
+
+# kubectl apply -f site.yaml
+</pre>
+
+<h2>Kubernetes custom resources</h2>
+
+<pre>
+apiVersion: skupper.io/v1alpha1
+kind: RequiredService
+metadata:
+  name: inventory
+  namespace: storefront
+spec:
+  ports:
+    - port: 8080
+      name: api
+      protocol: tcp
+
+# kubectl apply -f required-service.yaml
+</pre>
+
+<nav class="form-nav">
+  <a class="big-button" href="../index.html?tab=services">Continue</a>
+</nav>
+
+</form>
