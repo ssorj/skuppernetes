@@ -18,16 +18,16 @@
     <div>
 
 
-<h1>Create link</h1>
+<h1>Create provided service</h1>
 
 <form>
 
-<h2></h2>
+<h2>Settings</h2>
 
 <div class="form-entry">
   <div class="entry-title">Name</div>
   <div class="entry-input">
-    <input id="name" type="text" value="warehouse"/>
+    <input id="name" type="text" value="orders"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
@@ -35,9 +35,9 @@
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Token file</div>
+  <div class="entry-title">Workload</div>
   <div class="entry-input">
-    <input id="token-file" type="file"/>
+    <input id="workload" type="text" value="deployment/orders"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
@@ -45,9 +45,21 @@
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Token secret</div>
+  <div class="entry-title">Publish not ready addresses?</div>
   <div class="entry-input">
-    <input id="token-secret" type="text" value="warehouse-token-1"/>
+    <input id="publish-not-ready-addresses" type="text" value="No"/>
+  </div>
+  <div class="entry-info">
+    Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
+  </div>
+</div>
+
+<h2>Port</h2>
+
+<div class="form-entry">
+  <div class="entry-title">Port</div>
+  <div class="entry-input">
+    <input id="port" type="text" value="8080"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
@@ -55,14 +67,39 @@
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Cost</div>
+  <div class="entry-title">Name</div>
   <div class="entry-input">
-    <input id="cost" type="text" value="1"/>
+    <input id="name" type="text" value="api"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
   </div>
 </div>
+
+<div class="form-entry">
+  <div class="entry-title">Protocol</div>
+  <div class="entry-input">
+    <input id="protocol" type="text" value="tcp"/>
+  </div>
+  <div class="entry-info">
+    Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
+  </div>
+</div>
+
+<div class="form-entry">
+  <div class="entry-title">Target port</div>
+  <div class="entry-input">
+    <input id="target-port" type="text" value="9090"/>
+  </div>
+  <div class="entry-info">
+    Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
+  </div>
+</div>
+
+<nav style="margin-top: 2em;">
+  <a class="small-button">Add port</a>
+  <a class="small-button gray-out">Remove port</a>
+</nav>
 
 <nav class="form-nav">
   <a class="big-button" href="create-interlude.html">Submit</a>

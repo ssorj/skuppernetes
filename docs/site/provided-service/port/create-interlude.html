@@ -25,8 +25,7 @@
 <h2>Skupper CLI</h2>
 
 <pre>
-skupper init --site-name storefront --ingress none --enable-console true \
-    --routers 1 --router-cpu 1.0 --router-cpu-limit 1.0
+skupper provided-service add-port orders 8080 --name api --protocol tcp --target-port 9090
 </pre>
 
 <h2>Skupper YAML</h2>
@@ -35,57 +34,37 @@ skupper init --site-name storefront --ingress none --enable-console true \
 version: 1
 site:
   name: storefront
-  ingress: none
-  console-enabled: true
-  routers: 1
-  router-cpu: 1.0
-  router-cpu-limit: 1.0
+  provided-services:
+    - name: orders
+      ports:
+        - port: 8080
+          name: api
+          protocol: tcp
+          target-port: 9090
 
 # skupper init -f site.yaml
-# skupper bundle create site.yaml bundle.tar.gz
-</pre>
-
-<h2>Skupper YAML embedded in a ConfigMap</h2>
-
-<pre>
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: skupper-config
-  namespace: storefront
-data:
-  version: 1
-  site:
-    name: storefront
-    ingress: none
-    console-enabled: true
-    routers: 1
-    router-cpu: 1.0
-    router-cpu-limit: 1.0
-
-# kubectl apply -f site.yaml
 </pre>
 
 <h2>Kubernetes custom resource</h2>
 
 <pre>
 apiVersion: skupper.io/v1alpha1
-kind: Site
+kind: ProvidedService
 metadata:
-  name: storefront
+  name: orders
   namespace: storefront
 spec:
-  ingress: none
-  consoleEnabled: false
-  routers: 1
-  routerCpu: 1.0
-  routerCpuLimit: 1.0
+  ports:
+    - port: 8080
+      name: api
+      protocol: tcp # ?
+      targetPort: 9090 # ?
 
-# kubectl apply -f site.yaml
+# kubectl apply -f resource.yaml
 </pre>
 
 <nav class="form-nav">
-  <a class="big-button" href="index.html?tab=details">Continue</a>
+  <a class="big-button" href="../index.html?tab=ports">Continue</a>
 </nav>
 
 </form>

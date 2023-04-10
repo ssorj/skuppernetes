@@ -18,29 +18,42 @@
     <div>
 
 
-<h1>Interlude</h1>
+<h1>Equivalent operations</h1>
 
 <form>
+
+<h2>Skupper CLI</h2>
+
+<pre>
+skupper link create warehouse-token-1.yaml --name warehouse --cost 1
+</pre>
 
 <h2>Skupper YAML</h2>
 
 <pre>
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: skupper-link
-data:
-  token-secret: &lt;token-secret&gt;
-  name: warehouse
-  cost: 1
+version: 1
+site:
+  name: storefront
+  links:
+    - name: warehouse
+      token-secret: warehouse-token-1
+      cost: 1
+
+# skupper init -f site.yaml
 </pre>
 
-<h2>Skupper command</h2>
+<h2>Kubernetes custom resource</h2>
 
 <pre>
-skupper link create &lt;token-file&gt; \
-  --name warehouse \
-  --cost 1
+apiVersion: skupper.io/v1alpha1
+kind: Link
+metadata:
+  name: warehouse
+  namespace: storefront
+spec:
+  tokenSecret: warehouse-token-1
+
+# kubectl apply -f resource.yaml
 </pre>
 
 <nav class="form-nav">

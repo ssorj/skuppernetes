@@ -41,16 +41,49 @@
 
 <div class="title-bar">
   <div>
-    <div><nav class="path-nav"></nav></div>
-    <h1>Skupper</h1>
+    <div><nav class="path-nav"><a href="/skuppernetes/site/index.html">Skupper site</a><span class="path-separator">&#8250;</span><a href="/skuppernetes/site/provided-service/index.html">Provided service</a></nav></div>
+    <h1>orders</h1>
   </div>
+
   <nav>
+    <a class="small-button">Go to the Skupper network console</a>
   </nav>
 </div>
 
-<p>Skupper is not yet enabled for this namespace.</p>
+<div class="tabs">
+  <nav>
+    <a href="?tab=details">Details</a>
+    <a href="?tab=ports">Ports</a>
+  </nav>
 
-<a href="site/enable-interlude.html" class="small-button">Enable Skupper</a>
+  <div id="details">
+    <div class="section-bar">
+      <h2>Settings</h2>
+      <nav>
+        <a class="small-button">Edit settings</a>
+      </nav>
+    </div>
+
+    <table class="properties"><tbody><tr><td>Name</td><td>orders</td></tr><tr><td>Workload</td><td>deployment/orders</td></tr><tr><td>Publish not ready addresses?</td><td>No</td></tr></tbody></table>
+
+    <div class="section-bar">
+      <h2>Properties</h2>
+    </div>
+
+    <table class="properties"><tbody><tr><td>Created</td><td>2 days ago</td></tr></tbody></table>
+  </div>
+
+  <div id="ports">
+    <div class="section-bar">
+      <h2>Ports</h2>
+      <nav>
+        <a href="port/create.html" class="small-button">Create port</a>
+      </nav>
+    </div>
+
+    <table><tbody><tr><th>Port</th><th>Name</th><th>Protocol</th><th>Created</th></tr><tr><td>8080</td><td>api</td><td>TCP</td><td>2 days ago</td></tr></tbody></table>
+  </div>
+</div>
 
 
       </main>

@@ -32,13 +32,13 @@ Element.prototype.$$ = function () {
   return this.querySelectorAll.apply(this, arguments);
 };
 
-window.addEventListener("load", () => {
-    let pathNav = $("#-path-nav > nav");
+// window.addEventListener("load", () => {
+//     let pathNav = $("#-path-nav > nav");
 
-    if (pathNav.$$("a").length < 2) {
-        $("#-path-nav").style.display = "none";
-    }
-});
+//     if (pathNav.$$("a").length < 2) {
+//         $("#-path-nav").style.display = "none";
+//     }
+// });
 
 window.addEventListener("load", () => {
     function splitPath(path) {
