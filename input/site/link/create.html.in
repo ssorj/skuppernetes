@@ -11,7 +11,7 @@ body_template: config/excursion.html
 <div class="form-entry">
   <div class="entry-title">Name</div>
   <div class="entry-input">
-    <input id="name" type="text" value="link-to-warehouse"/>
+    <input id="name" type="text" value="warehouse"/>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}

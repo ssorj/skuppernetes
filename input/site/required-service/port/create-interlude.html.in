@@ -9,18 +9,8 @@ body_template: config/excursion.html
 <h2>Skupper CLI</h2>
 
 <pre>
-skupper service create orders 8080
-skupper service bind deployment/orders --target-port 9090
-#
-# How to handle multiple ports:
-#
-# Current
-skupper service create orders 8080 8081
-skupper service bind orders deployment/orders --target-port 9090 --target-port 9091
-# Proposed (assuming we keep the service-and-ports model)
-skupper service create orders
-skupper service add-port orders 8080 deployment/orders --target-port 9090
-skupper service add-port orders 8081 deployment/orders --target-port 9091
+# skupper required-service create-port SERVICE-NAME PORT [OPTIONS]
+skupper required-service create-port orders 8080 --name http --protocol tcp
 </pre>
 
 <h2>Skupper YAML</h2>
@@ -29,46 +19,31 @@ skupper service add-port orders 8081 deployment/orders --target-port 9091
 version: 1
 site:
   name: storefront
-  links:
-    - name: link-to-warehouse
-      token-secret: warehouse-token-1
-      cost: 1
+  required-services:
+    - name: inventory
+      ports:
+        - port: 8080
+          name: http
+          protocol: tcp
 
 # skupper init -f site.yaml
-</pre>
-
-<h2>Skupper YAML embedded in a ConfigMap</h2>
-
-<pre>
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: skupper-config
-  namespace: storefront
-data:
-  version: 1
-  site:
-    name: storefront
-    links:
-      - name: link-to-warehouse
-        token-secret: warehouse-token-1
-        cost: 1
-
-# kubectl apply -f site.yaml
 </pre>
 
 <h2>Kubernetes custom resource</h2>
 
 <pre>
 apiVersion: skupper.io/v1alpha1
-kind: Link
+kind: RequiredService
 metadata:
-  name: link-to-warehouse
+  name: inventory
   namespace: storefront
 spec:
-  tokenSecret: warehouse-token-1
+  ports:
+    - port: 8080
+      name: http
+      protocol: tcp # ?
 
-# kubectl apply -f link.yaml
+# kubectl apply -f resource.yaml
 </pre>
 
 <nav class="form-nav">

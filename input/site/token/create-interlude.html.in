@@ -29,29 +29,6 @@ site:
 # kubectl get secret/storefront-token-1 -o jsonpath={.data} | base64 -d &gt; storefront-token-1.yaml
 </pre>
 
-<h2>Skupper YAML embedded in a ConfigMap</h2>
-
-<pre>
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: skupper-config
-  namespace: storefront
-data:
-  version: 1
-  site:
-    name: storefront
-    tokens:
-      - name: storefront-token-1
-        auth-name: skupper
-        token-secret: storefront-token-1
-        uses: 1
-        expiry: 15m
-
-# kubectl apply -f site.yaml
-# kubectl get secret/storefront-token-1 -o jsonpath={.data} | base64 -d &gt; storefront-token-1.yaml
-</pre>
-
 <h2>Kubernetes custom resource</h2>
 
 <pre>
@@ -66,7 +43,7 @@ spec:
   uses: 1
   expiry: 15m
 
-# kubectl apply -f token.yaml
+# kubectl apply -f resource.yaml
 # kubectl get secret/storefront-token-1 -o jsonpath={.data} | base64 -d &gt; storefront-token-1.yaml
 </pre>
 

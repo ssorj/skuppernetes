@@ -46,16 +46,14 @@ site_properties = html_table(props, class_="properties")
 def cell(column_index, value):
     if column_index == 0:
         value = html_link(value)
-    elif column_index == 3:
-        value = table_button("Delete")
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Status", "Created", "Actions"
+headings = "Name", "Status", "Cost", "Created"
 
 data = (
-    ("warehouse", "OK", "1/8/2020", None),
-    ("headquarters", "Error: Unreachable", "3/15/2020", None),
+    ("warehouse", "OK", 1, "1/8/2020"),
+    ("headquarters", "Error: Unreachable", 2, "3/15/2020"),
 )
 
 link_table = html_table(data, headings=headings, cell_fn=cell)
@@ -75,7 +73,7 @@ def cell(column_index, value):
     if column_index == 0:
         value = html_link(value)
     elif column_index == 4:
-        value = " ".join((table_button("Download"), table_button("Delete")))
+        value = table_button("Download")
 
     return f"<td>{value}</td>"
 
@@ -96,16 +94,18 @@ def cell(column_index, value):
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Ports", "Created"
+headings = "Name", "Ports", "Workload", "Created"
 
 data = (
-    ("orders", "8080", "2 days ago"),
+    ("orders", "8080", "deployment/orders", "2 days ago"),
 )
 
 provided_service_table = html_table(data, headings=headings, cell_fn=cell)
 
 props = (
     ("Name", "orders"),
+    ("Workload", "deployment/orders"),
+    ("Publish not ready addresses?", "No"),
 )
 
 provided_service_settings = html_table(props, class_="properties")
@@ -116,7 +116,7 @@ props = (
 
 provided_service_properties = html_table(props, class_="properties")
 
-headings = "Port number", "Name", "Protocol", "Created"
+headings = "Port", "Name", "Protocol", "Created"
 
 data = (
     ("8080", "api",  "TCP", "2 days ago"),
@@ -140,3 +140,24 @@ data = (
 )
 
 required_service_table = html_table(data, headings=headings, cell_fn=cell)
+
+props = (
+    ("Name", "inventory"),
+    ("Publish not ready addresses?", "No"),
+)
+
+required_service_settings = html_table(props, class_="properties")
+
+props = (
+    ("Created", "2 days ago"),
+)
+
+required_service_properties = html_table(props, class_="properties")
+
+headings = "Port", "Name", "Protocol", "Created"
+
+data = (
+    ("8080", "http",  "TCP", "2 days ago"),
+)
+
+required_service_ports_table = html_table(data, headings=headings)

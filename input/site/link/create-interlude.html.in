@@ -9,7 +9,7 @@ body_template: config/excursion.html
 <h2>Skupper CLI</h2>
 
 <pre>
-skupper link create warehouse-token-1.yaml --name link-to-warehouse --cost 1
+skupper link create warehouse-token-1.yaml --name warehouse --cost 1
 </pre>
 
 <h2>Skupper YAML</h2>
@@ -19,31 +19,11 @@ version: 1
 site:
   name: storefront
   links:
-    - name: link-to-warehouse
+    - name: warehouse
       token-secret: warehouse-token-1
       cost: 1
 
 # skupper init -f site.yaml
-</pre>
-
-<h2>Skupper YAML embedded in a ConfigMap</h2>
-
-<pre>
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: skupper-config
-  namespace: storefront
-data:
-  version: 1
-  site:
-    name: storefront
-    links:
-      - name: link-to-warehouse
-        token-secret: warehouse-token-1
-        cost: 1
-
-# kubectl apply -f site.yaml
 </pre>
 
 <h2>Kubernetes custom resource</h2>
@@ -52,12 +32,12 @@ data:
 apiVersion: skupper.io/v1alpha1
 kind: Link
 metadata:
-  name: link-to-warehouse
+  name: warehouse
   namespace: storefront
 spec:
   tokenSecret: warehouse-token-1
 
-# kubectl apply -f link.yaml
+# kubectl apply -f resource.yaml
 </pre>
 
 <nav class="form-nav">

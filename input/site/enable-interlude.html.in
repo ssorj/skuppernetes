@@ -8,7 +8,7 @@ body_template: config/excursion.html
 
 <h2>Skupper CLI</h2>
 
-<pre>$ skupper init --site-name storefront</pre>
+<pre>skupper init --site-name storefront</pre>
 
 <h2>Skupper YAML</h2>
 
@@ -18,23 +18,6 @@ site:
   name: storefront
 
 # skupper init -f site.yaml
-# skupper bundle create site.yaml bundle.tar.gz
-</pre>
-
-<h2>Skupper YAML embedded in a ConfigMap</h2>
-
-<pre>
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: skupper-config
-  namespace: storefront
-data:
-  version: 1
-  site:
-    name: storefront
-
-# kubectl apply -f site.yaml
 </pre>
 
 <h2>Kubernetes custom resource</h2>
@@ -46,7 +29,7 @@ metadata:
   name: storefront
   namespace: storefront
 
-# kubectl apply -f site.yaml
+# kubectl apply -f resource.yaml
 </pre>
 
 <nav class="form-nav">

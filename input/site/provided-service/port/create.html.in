@@ -38,6 +38,16 @@ body_template: config/excursion.html
   </div>
 </div>
 
+<div class="form-entry">
+  <div class="entry-title">Target port</div>
+  <div class="entry-input">
+    <input id="target-port" type="text" value="9090"/>
+  </div>
+  <div class="entry-info">
+    {{lipsum(15)}}
+  </div>
+</div>
+
 <nav class="form-nav">
   <a class="big-button" href="create-interlude.html">Submit</a>
 </nav>

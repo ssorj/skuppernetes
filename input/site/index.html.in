@@ -5,7 +5,7 @@ title: Skupper
 <div class="title-bar">
   <div>
     <div>Namespace: storefront</div>
-    <h1>{{page.title}}</h1>
+    <h1>Skupper site <i>storefront</i></h1>
   </div>
 
   <nav>
@@ -19,7 +19,8 @@ title: Skupper
     <a href="?tab=details">Details</a>
     <a href="?tab=links">Links</a>
     <a href="?tab=tokens">Tokens</a>
-    <a href="?tab=services">Services</a>
+    <a href="?tab=provided-services">Provided services</a>
+    <a href="?tab=required-services">Required services</a>
   </nav>
 
   <div id="overview">
@@ -113,7 +114,7 @@ title: Skupper
 
     {{token_table}}
   </div>
-  <div id="services">
+  <div id="provided-services">
     <div class="section-bar">
       <h2>Provided services</h2>
       <nav>
@@ -122,11 +123,13 @@ title: Skupper
     </div>
 
     {{provided_service_table}}
+  </div>
+  <div id="required-services">
 
     <div class="section-bar">
       <h2>Required services</h2>
       <nav>
-        <a class="small-button">Create required service</a>
+        <a href="required-service/create.html" class="small-button">Create required service</a>
       </nav>
     </div>
 

@@ -6,10 +6,10 @@ body_template: config/excursion.html
 
 <form>
 
-<h2></h2>
+<h2>Settings</h2>
 
 <div class="form-entry">
-  <div class="entry-title">Port number</div>
+  <div class="entry-title">Port</div>
   <div class="entry-input">
     <input id="port" type="text" value="8080"/>
   </div>
@@ -19,9 +19,9 @@ body_template: config/excursion.html
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Workload</div>
+  <div class="entry-title">Name</div>
   <div class="entry-input">
-    <input id="workload" type="text" value="deployment/orders"/>
+    <input id="name" type="text" value="http"/>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}
@@ -29,9 +29,9 @@ body_template: config/excursion.html
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Target port</div>
+  <div class="entry-title">Protocol</div>
   <div class="entry-input">
-    <input id="target-port" type="text" value="9090"/>
+    <input id="protocol" type="text" value="tcp"/>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}

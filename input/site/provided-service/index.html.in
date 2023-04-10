@@ -5,7 +5,7 @@ title: Skupper
 <div class="title-bar">
   <div>
     <div>Namespace: storefront</div>
-    <h1>Provided service <b>orders</b></h1>
+    <h1>Provided service <i>orders</i></h1>
   </div>
 
   <nav>
@@ -17,7 +17,6 @@ title: Skupper
   <nav>
     <a href="?tab=details">Details</a>
     <a href="?tab=ports">Ports</a>
-    <a href="?tab=workloads">Workloads</a>
   </nav>
 
   <div id="details">
@@ -46,14 +45,5 @@ title: Skupper
     </div>
 
     {{provided_service_ports_table}}
-  </div>
-
-  <div id="workloads">
-    <div class="section-bar">
-      <h2>Workloads</h2>
-      <nav>
-        <a href="workload/create.html" class="small-button">Create workload</a>
-      </nav>
-    </div>
   </div>
 </div>
