@@ -15,8 +15,8 @@ skupper provided-service create orders deployment/orders --publish-not-ready-add
 skupper provided-service create-port orders 8080 --name api --protocol tcp --target-port 9090
 
 # Simplified form for the common case:
-# skupper provide WORKLOAD PORT [OPTIONS]
-skupper provide deployment/orders 8080 --name api --protocol tcp --target-port 9090
+# skupper provide SERVICE-NAME:PORT WORKLOAD [OPTIONS]
+skupper provide orders:8080 deployment/orders --name api --protocol tcp --target-port 9090
 </pre>
 
 <h2>Skupper YAML</h2>
