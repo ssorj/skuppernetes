@@ -13,6 +13,10 @@ body_template: config/excursion.html
 # skupper required-service create-port SERVICE-NAME PORT [OPTIONS]
 skupper required-service create inventory --publish-not-ready-addresses=false
 skupper required-service create-port inventory 8080 --name http --protocol tcp
+
+# Simplified form for the common case:
+# skupper require SERVICE-NAME PORT [OPTIONS]
+skupper require orders 8080 --name http --protocol tcp
 </pre>
 
 <h2>Skupper YAML</h2>

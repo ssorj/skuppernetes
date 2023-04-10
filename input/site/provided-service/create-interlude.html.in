@@ -9,10 +9,14 @@ body_template: config/excursion.html
 <h2>Skupper CLI</h2>
 
 <pre>
-# skupper provided-service create SERVICE-NAME [OPTIONS]
+# skupper provided-service create SERVICE-NAME WORKLOAD [OPTIONS]
 # skupper provided-service create-port SERVICE-NAME PORT [OPTIONS]
 skupper provided-service create orders deployment/orders --publish-not-ready-addresses=false
-skupper provided-service create-port orders 8080 --name api --protocol tcp
+skupper provided-service create-port orders 8080 --name api --protocol tcp --target-port 9090
+
+# Simplified form for the common case:
+# skupper provide WORKLOAD PORT [OPTIONS]
+skupper provide deployment/orders 8080 --name api --protocol tcp --target-port 9090
 </pre>
 
 <h2>Skupper YAML</h2>

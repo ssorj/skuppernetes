@@ -1,11 +1,11 @@
 ---
-title: Skupper
+title: Provided service
 ---
 
 <div class="title-bar">
   <div>
-    <div>Namespace: storefront</div>
-    <h1>Provided service <i>orders</i></h1>
+    <div>{{path_nav(page)}}</div>
+    <h1>orders</h1>
   </div>
 
   <nav>

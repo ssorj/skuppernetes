@@ -1,11 +1,11 @@
 ---
-title: Skupper
+title: Skupper site
 ---
 
 <div class="title-bar">
   <div>
-    <div>Namespace: storefront</div>
-    <h1>Skupper site <i>storefront</i></h1>
+    <div>{{path_nav(page)}}</div>
+    <h1>storefront</h1>
   </div>
 
   <nav>

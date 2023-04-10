@@ -1,11 +1,11 @@
 ---
-title: Skupper
+title: Required service
 ---
 
 <div class="title-bar">
   <div>
-    <div>Namespace: storefront</div>
-    <h1>Required service <i>inventory</i></h1>
+    <div>{{path_nav(page)}}</div>
+    <h1>inventory</h1>
   </div>
 
   <nav>
