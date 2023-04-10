@@ -36,6 +36,7 @@ metadata:
   namespace: storefront
 spec:
   tokenSecret: warehouse-token-1
+  cost: 1
 
 # kubectl apply -f resource.yaml
 </pre>
