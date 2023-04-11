@@ -20,7 +20,7 @@ site:
   name: storefront
   links:
     - name: warehouse
-      token-secret: warehouse-token-1
+      secret: warehouse-token-1
       cost: 1
 
 # skupper init -f site.yaml
@@ -35,7 +35,7 @@ metadata:
   name: warehouse
   namespace: storefront
 spec:
-  tokenSecret: warehouse-token-1
+  secret: warehouse-token-1
   cost: 1
 
 # kubectl apply -f resource.yaml

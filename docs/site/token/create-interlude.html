@@ -37,7 +37,7 @@ site:
   tokens:
     - name: storefront-token-1
       auth-name: skupper
-      token-secret: storefront-token-1
+      secret: storefront-token-1
       uses: 1
       expiry: 15m
 
@@ -55,7 +55,7 @@ metadata:
   namespace: storefront
 spec:
   authName: skupper
-  tokenSecret: storefront-token-1
+  secret: storefront-token-1
   uses: 1
   expiry: 15m
 

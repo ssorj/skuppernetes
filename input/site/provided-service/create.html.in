@@ -19,9 +19,9 @@ body_template: config/excursion.html
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Workload</div>
+  <div class="entry-title">Target</div>
   <div class="entry-input">
-    <input id="workload" type="text" value="deployment/orders"/>
+    <input id="target" type="text" value="deployment/orders"/>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}

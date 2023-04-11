@@ -25,13 +25,13 @@
 <h2>Skupper CLI</h2>
 
 <pre>
-# skupper provided-service create SERVICE-NAME WORKLOAD [OPTIONS]
+# skupper provided-service create SERVICE-NAME TARGET [OPTIONS]
 # skupper provided-service create-port SERVICE-NAME PORT [OPTIONS]
 skupper provided-service create orders deployment/orders --publish-not-ready-addresses=false
 skupper provided-service create-port orders 8080 --name api --protocol tcp --target-port 9090
 
 # Simplified form for the common case:
-# skupper provide SERVICE-NAME:PORT WORKLOAD [OPTIONS]
+# skupper provide SERVICE-NAME:PORT TARGET [OPTIONS]
 skupper provide orders:8080 deployment/orders --name api --protocol tcp --target-port 9090
 </pre>
 
@@ -43,7 +43,7 @@ site:
   name: storefront
   provided-services:
     - name: orders
-      workload: deployment/orders
+      target: deployment/orders
       publish-not-ready-addresses: false
       ports:
         - port: 8080
@@ -63,12 +63,12 @@ metadata:
   name: orders
   namespace: storefront
 spec:
-  workload: deployment/orders # ?
+  target: deployment/orders       # ?
   publishNotReadyAddresses: false # ?
   ports:
     - port: 8080
       name: api
-      protocol: tcp # ?
+      protocol: tcp    # ?
       targetPort: 9090 # ?
 
 # kubectl apply -f resource.yaml
