@@ -9,7 +9,7 @@ title: Skupper site
   </div>
 
   <nav>
-    <a class="small-button">Go to the Skupper network console</a>
+    <a class="small-button">Go to the network console</a>
   </nav>
 </div>
 
@@ -17,10 +17,12 @@ title: Skupper site
   <nav>
     <a href="?tab=overview">Overview</a>
     <a href="?tab=details">Details</a>
+    <a href="?tab=yaml">YAML</a>
     <a href="?tab=links">Links</a>
     <a href="?tab=tokens">Tokens</a>
-    <a href="?tab=provided-services">Provided services</a>
-    <a href="?tab=required-services">Required services</a>
+    <a href="?tab=listeners">Listeners</a>
+    <a href="?tab=connectors">Connectors</a>
+    <a href="?tab=network-console">Network console</a>
   </nav>
 
   <div id="overview">
@@ -49,25 +51,34 @@ title: Skupper site
       <a href="token/create.html" class="small-button">Create token</a>
     </nav>
 
-    <h2>Exposing services from this namespace to remote sites</h2>
-
-    <p>{{lipsum(15)}}</p>
-
-    <nav>
-      <a href="provided-service/create.html" class="small-button">Create provided service</a>
-    </nav>
-
     <h2>Accessing services at remote sites from this namespace</h2>
 
     <p>{{lipsum(15)}}</p>
 
     <nav>
-      <a href="required-service/create.html" class="small-button">Create required service</a>
+      <a href="listener/create.html" class="small-button">Create listener</a>
+    </nav>
+
+    <h2>Exposing services from this namespace to remote sites</h2>
+
+    <p>{{lipsum(15)}}</p>
+
+    <nav>
+      <a href="connector/create.html" class="small-button">Create connector</a>
+    </nav>
+
+    <h2>Deploying the Skupper network console in this namespace</h2>
+
+    <p>{{lipsum(15)}}</p>
+
+    <nav>
+      <a class="small-button">Deploy the network console</a>
     </nav>
 
     <h2>More information</h2>
 
     <ul>
+      <li><a>Creating sites using the command line</a></li>
       <li><a>Linking sites using the command line</a></li>
       <li><a>Exposing services using the command line</a></li>
     </ul>
@@ -76,7 +87,7 @@ title: Skupper site
     <div class="section-bar">
       <h2>Settings</h2>
       <nav>
-        <a href="edit.html" class="small-button">Edit settings</a>
+        <a class="small-button">Edit settings</a>
       </nav>
     </div>
 
@@ -87,6 +98,9 @@ title: Skupper site
     </div>
 
     {{site_properties}}
+  </div>
+  <div id="yaml">
+    <code><pre>{{page.include("resources/site.yaml")}}</pre></code>
   </div>
   <div id="links">
     <div class="section-bar">
@@ -114,25 +128,44 @@ title: Skupper site
 
     {{token_table}}
   </div>
-  <div id="provided-services">
+  <div id="listeners">
+
     <div class="section-bar">
-      <h2>Provided services</h2>
+      <h2>Listeners</h2>
       <nav>
-        <a href="provided-service/create.html" class="small-button">Create provided service</a>
+        <a href="listener/create.html" class="small-button">Create listener</a>
       </nav>
     </div>
 
-    {{provided_service_table}}
+    {{listener_table}}
   </div>
-  <div id="required-services">
-
+  <div id="connectors">
     <div class="section-bar">
-      <h2>Required services</h2>
+      <h2>Connectors</h2>
       <nav>
-        <a href="required-service/create.html" class="small-button">Create required service</a>
+        <a href="connector/create.html" class="small-button">Create connector</a>
       </nav>
     </div>
 
-    {{required_service_table}}
+    {{connector_table}}
+  </div>
+  <div id="network-console">
+    <div class="section-bar">
+      <h2>Network console</h2>
+    </div>
+
+    <p>The network console is not currently deployed in this
+      namespace.
+
+    <nav>
+      <a class="small-button">Deploy the network console</a>
+    </nav>
+
+    <p>The network console is available from a remote
+      site.</p>
+
+    <nav>
+      <a class="small-button">Go to the network console</a>
+    </nav>
   </div>
 </div>

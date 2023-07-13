@@ -2,16 +2,16 @@
 body_template: config/excursion.html
 ---
 
-<h1>Create token</h1>
+<h1>Create listener</h1>
 
 <form>
 
-<h2></h2>
+<h2>Settings</h2>
 
 <div class="form-entry">
   <div class="entry-title">Name</div>
   <div class="entry-input">
-    <input id="name" type="text" value="storefront"/>
+    <input id="name" type="text" value="inventory"/>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}
@@ -19,9 +19,9 @@ body_template: config/excursion.html
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Secret</div>
+  <div class="entry-title">Routing key</div>
   <div class="entry-input">
-    <input id="secret" type="text" value="storefront"/>
+    <input id="routing-key" type="text" value="inventory:8080"/>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}
@@ -29,9 +29,9 @@ body_template: config/excursion.html
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Authentication name</div>
+  <div class="entry-title">Service name</div>
   <div class="entry-input">
-    <input id="name" type="text" value="skupper"/>
+    <input id="host" type="text" value="inventory"/>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}
@@ -39,19 +39,9 @@ body_template: config/excursion.html
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Use limit</div>
+  <div class="entry-title">Service port</div>
   <div class="entry-input">
-    <input id="use-limit" type="text" value="1"/>
-  </div>
-  <div class="entry-info">
-    {{lipsum(15)}}
-  </div>
-</div>
-
-<div class="form-entry">
-  <div class="entry-title">Expiry</div>
-  <div class="entry-input">
-    <input id="expiry" type="text" value="15m"/>
+    <input id="port" type="text" value="8080"/>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}

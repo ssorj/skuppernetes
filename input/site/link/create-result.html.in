@@ -1,0 +1,14 @@
+---
+body_template: config/excursion.html
+---
+
+<h1>Result</h1>
+
+<p>The link "warehouse" has been created.</p>
+
+<p>You can connect services across linked sites by creating listeners
+and connectors.</p>
+
+<nav style="margin-top: 2em;">
+  <a class="big-button" href="../index.html?tab=links">Continue</a>
+</nav>

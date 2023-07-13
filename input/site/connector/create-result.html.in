@@ -1,0 +1,14 @@
+---
+body_template: config/excursion.html
+---
+
+<h1>Result</h1>
+
+<p>The connector "orders" has been created.</p>
+
+<p>You can create listeners in remote sites to access the service
+associated with this connector.</p>
+
+<nav style="margin-top: 2em;">
+  <a class="big-button" href="index.html">Continue</a>
+</nav>

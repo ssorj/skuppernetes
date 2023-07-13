@@ -4,7 +4,7 @@ body_template: config/excursion.html
 
 <h1>Result</h1>
 
-<p>Skupper is now enabled for namespace storefront.</p>
+<p>The listener "inventory" has been created.</p>
 
 <nav style="margin-top: 2em;">
   <a class="big-button" href="index.html">Continue</a>

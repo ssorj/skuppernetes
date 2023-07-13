@@ -26,16 +26,13 @@ def table_button(content, href=None):
 props = (
     ("Name", "storefront"),
     ("Ingress", "None"),
-    ("Console enabled?", "Yes"),
-    ("Routers", 1),
-    ("Router CPU request", 1.0),
-    ("Router CPU limit", 1.0),
 )
 
 site_settings = html_table(props, class_="properties")
 
 props = (
-    ("Version", "1.2.3"),
+    ("Controller version", "1.2.3 (sha256:176f578ac5c437ea61e7b521ff3ef52b6405da11417476c49464dd654a3cafd2)"),
+    ("Transport version", "2.3.4 (sha256:55da164dcf6fd69a2675c254339f51a3dfcbe9494b0d44f0e79936ac7aa8a83e)"),
     ("Created", "2 days ago"),
 )
 
@@ -80,79 +77,75 @@ def cell(column_index, value):
 headings = "Name", "Use limit", "Expiry", "Created", "Actions"
 
 data = (
-    ("storefront-token-1", 1, "15 minutes", "3 minutes ago", None),
-    ("storefront-token-2", "None", "24 hours", "2 hours ago", None),
+    ("storefront", 1, "15 minutes", "3 minutes ago", None),
+    ("storefront-2", "None", "24 hours", "2 hours ago", None),
 )
 
 token_table = html_table(data, headings=headings, cell_fn=cell)
 
-## Provided services
+## Connectors
 
 def cell(column_index, value):
     if column_index == 0:
-        value = html_link(value, href="provided-service/index.html")
+        value = html_link(value, href="connector/index.html")
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Ports", "Workload", "Created"
+headings = "Name", "Routing key", "Pod selector", "Pod port", "Created"
 
 data = (
-    ("orders", "8080", "deployment/orders", "2 days ago"),
+    ("orders", "orders:8080", "app=orders", "8080", "2 days ago"),
 )
 
-provided_service_table = html_table(data, headings=headings, cell_fn=cell)
+connector_table = html_table(data, headings=headings, cell_fn=cell)
 
 props = (
     ("Name", "orders"),
-    ("Workload", "deployment/orders"),
-    ("Publish not ready addresses?", "No"),
+    ("Routing key", "orders:8080"),
+    ("Pod selector", "app=orders"),
+    ("Pod port", "8080"),
 )
 
-provided_service_settings = html_table(props, class_="properties")
+connector_settings = html_table(props, class_="properties")
 
 props = (
     ("Created", "2 days ago"),
 )
 
-provided_service_properties = html_table(props, class_="properties")
+connector_properties = html_table(props, class_="properties")
 
-headings = "Port", "Name", "Protocol", "Created"
-
-data = (
-    ("8080", "api",  "TCP", "2 days ago"),
-)
-
-provided_service_ports_table = html_table(data, headings=headings)
-
-## Required services
+## Listeners
 
 def cell(column_index, value):
     if column_index == 0:
-        value = html_link(value, href="required-service/index.html")
+        value = html_link(value, href="listener/index.html")
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Ports", "Created"
+headings = "Name", "Routing key", "Service name", "Service port", "Created"
 
 data = (
-    ("inventory", "8080", "2 days ago"),
-    ("database", "5432, 8080", "2 days ago"),
+    ("inventory", "inventory:8080", "inventory", "8080", "2 days ago"),
+    ("database", "database:5432", "database", "5432", "2 days ago"),
+    ("database-2", "database:8080", "database", "8080", "2 days ago"),
 )
 
-required_service_table = html_table(data, headings=headings, cell_fn=cell)
+listener_table = html_table(data, headings=headings, cell_fn=cell)
 
 props = (
     ("Name", "inventory"),
-    ("Publish not ready addresses?", "No"),
+    ("Routing key", "inventory:8080"),
+    ("Service name", "inventory"),
+    ("Service port", "8080"),
 )
 
-required_service_settings = html_table(props, class_="properties")
+listener_settings = html_table(props, class_="properties")
 
 props = (
     ("Created", "2 days ago"),
 )
 
-required_service_properties = html_table(props, class_="properties")
+listener_properties = html_table(props, class_="properties")
 
 headings = "Port", "Name", "Protocol", "Created"
 
@@ -160,4 +153,4 @@ data = (
     ("8080", "http",  "TCP", "2 days ago"),
 )
 
-required_service_ports_table = html_table(data, headings=headings)
+listener_ports_table = html_table(data, headings=headings)

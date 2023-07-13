@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-connector-orders
+  namespace: storefront
+  labels:
+    skupper.io/type: connector
+data:
+  routing-key: orders:8080
+  selector: app=backend
+  port: 8080

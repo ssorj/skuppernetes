@@ -2,7 +2,7 @@
 body_template: config/excursion.html
 ---
 
-<h1>Create link</h1>
+<h1>Create site</h1>
 
 <form>
 
@@ -11,7 +11,7 @@ body_template: config/excursion.html
 <div class="form-entry">
   <div class="entry-title">Name</div>
   <div class="entry-input">
-    <input id="name" type="text" value="warehouse"/>
+    <input id="name" type="text" value="storefront"/>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}
@@ -19,19 +19,13 @@ body_template: config/excursion.html
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Token file</div>
+  <div class="entry-title">Ingress</div>
   <div class="entry-input">
-    <input id="token-file" type="text" value="warehouse-token.yaml"/>
-  </div>
-  <div class="entry-info">
-    {{lipsum(15)}}
-  </div>
-</div>
-
-<div class="form-entry">
-  <div class="entry-title">Cost</div>
-  <div class="entry-input">
-    <input id="cost" type="text" value="1"/>
+    <select id="ingress">
+      <option value="none">None</option>
+      <option value="route">OpenShift Route</option>
+      <option value="loadbalancer">LoadBalancer</option>
+    </select>
   </div>
   <div class="entry-info">
     {{lipsum(15)}}
