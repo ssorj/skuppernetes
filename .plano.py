@@ -28,7 +28,7 @@ def publish(verbose=False):
     ENV["SITE_URL"] = "/skuppernetes"
 
     with project_env():
-        args = ["render", site.config_dir, site.input_dir, "docs", "--force"]
+        args = ["render", "--force"]
 
         if verbose:
             args.append("--verbose")
