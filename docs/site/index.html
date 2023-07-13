@@ -4,10 +4,10 @@
     <title>Skuppernetes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic|Ubuntu+Mono:400" type="text/css"/>
-    <link rel="stylesheet" href="/skuppernetes/main.css" type="text/css"/>
-    <link rel="icon" href="" type="image/png"/>
+    <link rel="stylesheet" href="/main.css" type="text/css"/>
+    <link rel="icon" href="data:,"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" defer="defer">
-    <script type="text/javascript" src="/skuppernetes/main.js" defer="defer"></script>
+    <script type="text/javascript" src="/main.js" defer="defer"></script>
 
 
 
@@ -17,7 +17,7 @@
   <header>
   <div>
     <nav id="-left-site-nav">
-      <a href="/skuppernetes/index.html" id="-logotype"><span class="material-icons-outlined">anchor</span> Skuppernetes</a>
+      <a href="/index.html" id="-logotype"><span class="material-icons-outlined">anchor</span> Skuppernetes</a>
     </nav>
     <nav id="-right-site-nav">
       <a href="">Hi, Ward</a>
@@ -33,7 +33,7 @@
         <a>Workloads</a>
         <a>Networking</a>
         <a>Storage</a>
-        <a>Extensions</a>
+        <a>Plugins</a>
         <a class="selected" style="padding-left: 1em;">Skupper</a>
       </nav>
       <main>
@@ -41,12 +41,12 @@
 
 <div class="title-bar">
   <div>
-    <div><nav class="path-nav"><a href="/skuppernetes/site/index.html">Skupper site</a></nav></div>
+    <div><nav class="path-nav"><a href="/site/index.html">Skupper site</a></nav></div>
     <h1>storefront</h1>
   </div>
 
   <nav>
-    <a class="small-button">Go to the Skupper network console</a>
+    <a class="small-button">Go to the network console</a>
   </nav>
 </div>
 
@@ -54,10 +54,12 @@
   <nav>
     <a href="?tab=overview">Overview</a>
     <a href="?tab=details">Details</a>
+    <a href="?tab=yaml">YAML</a>
     <a href="?tab=links">Links</a>
     <a href="?tab=tokens">Tokens</a>
-    <a href="?tab=provided-services">Provided services</a>
-    <a href="?tab=required-services">Required services</a>
+    <a href="?tab=listeners">Listeners</a>
+    <a href="?tab=connectors">Connectors</a>
+    <a href="?tab=network-console">Network console</a>
   </nav>
 
   <div id="overview">
@@ -86,25 +88,34 @@
       <a href="token/create.html" class="small-button">Create token</a>
     </nav>
 
-    <h2>Exposing services from this namespace to remote sites</h2>
-
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.</p>
-
-    <nav>
-      <a href="provided-service/create.html" class="small-button">Create provided service</a>
-    </nav>
-
     <h2>Accessing services at remote sites from this namespace</h2>
 
     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.</p>
 
     <nav>
-      <a href="required-service/create.html" class="small-button">Create required service</a>
+      <a href="listener/create.html" class="small-button">Create listener</a>
+    </nav>
+
+    <h2>Exposing services from this namespace to remote sites</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.</p>
+
+    <nav>
+      <a href="connector/create.html" class="small-button">Create connector</a>
+    </nav>
+
+    <h2>Deploying the Skupper network console in this namespace</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.</p>
+
+    <nav>
+      <a class="small-button">Deploy the network console</a>
     </nav>
 
     <h2>More information</h2>
 
     <ul>
+      <li><a>Creating sites using the command line</a></li>
       <li><a>Linking sites using the command line</a></li>
       <li><a>Exposing services using the command line</a></li>
     </ul>
@@ -113,17 +124,30 @@
     <div class="section-bar">
       <h2>Settings</h2>
       <nav>
-        <a href="edit.html" class="small-button">Edit settings</a>
+        <a class="small-button">Edit settings</a>
       </nav>
     </div>
 
-    <table class="properties"><tbody><tr><td>Name</td><td>storefront</td></tr><tr><td>Ingress</td><td>None</td></tr><tr><td>Console enabled?</td><td>Yes</td></tr><tr><td>Routers</td><td>1</td></tr><tr><td>Router CPU request</td><td>1.0</td></tr><tr><td>Router CPU limit</td><td>1.0</td></tr></tbody></table>
+    <table class="properties"><tbody><tr><td>Name</td><td>storefront</td></tr><tr><td>Ingress</td><td>None</td></tr></tbody></table>
 
     <div class="section-bar">
       <h2>Properties</h2>
     </div>
 
-    <table class="properties"><tbody><tr><td>Version</td><td>1.2.3</td></tr><tr><td>Created</td><td>2 days ago</td></tr></tbody></table>
+    <table class="properties"><tbody><tr><td>Controller version</td><td>1.2.3 (sha256:176f578ac5c437ea61e7b521ff3ef52b6405da11417476c49464dd654a3cafd2)</td></tr><tr><td>Transport version</td><td>2.3.4 (sha256:55da164dcf6fd69a2675c254339f51a3dfcbe9494b0d44f0e79936ac7aa8a83e)</td></tr><tr><td>Created</td><td>2 days ago</td></tr></tbody></table>
+  </div>
+  <div id="yaml">
+    <code><pre>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-site
+  namespace: storefront
+  labels:
+    skupper.io/type: site
+data:
+  name: storefront
+  ingress: none
+</pre></code>
   </div>
   <div id="links">
     <div class="section-bar">
@@ -149,28 +173,47 @@
       </nav>
     </div>
 
-    <table><tbody><tr><th>Name</th><th>Use limit</th><th>Expiry</th><th>Created</th><th>Actions</th></tr><tr><td><a>storefront-token-1</a></td><td>1</td><td>15 minutes</td><td>3 minutes ago</td><td><a class="table-button">Download</a></td></tr><tr><td><a>storefront-token-2</a></td><td>None</td><td>24 hours</td><td>2 hours ago</td><td><a class="table-button">Download</a></td></tr></tbody></table>
+    <table><tbody><tr><th>Name</th><th>Use limit</th><th>Expiry</th><th>Created</th><th>Actions</th></tr><tr><td><a>storefront</a></td><td>1</td><td>15 minutes</td><td>3 minutes ago</td><td><a class="table-button">Download</a></td></tr><tr><td><a>storefront-2</a></td><td>None</td><td>24 hours</td><td>2 hours ago</td><td><a class="table-button">Download</a></td></tr></tbody></table>
   </div>
-  <div id="provided-services">
+  <div id="listeners">
+
     <div class="section-bar">
-      <h2>Provided services</h2>
+      <h2>Listeners</h2>
       <nav>
-        <a href="provided-service/create.html" class="small-button">Create provided service</a>
+        <a href="listener/create.html" class="small-button">Create listener</a>
       </nav>
     </div>
 
-    <table><tbody><tr><th>Name</th><th>Ports</th><th>Workload</th><th>Created</th></tr><tr><td><a href="provided-service/index.html">orders</a></td><td>8080</td><td>deployment/orders</td><td>2 days ago</td></tr></tbody></table>
+    <table><tbody><tr><th>Name</th><th>Routing key</th><th>Service name</th><th>Service port</th><th>Created</th></tr><tr><td><a href="listener/index.html">inventory</a></td><td>inventory:8080</td><td>inventory</td><td>8080</td><td>2 days ago</td></tr><tr><td><a href="listener/index.html">database</a></td><td>database:5432</td><td>database</td><td>5432</td><td>2 days ago</td></tr><tr><td><a href="listener/index.html">database-2</a></td><td>database:8080</td><td>database</td><td>8080</td><td>2 days ago</td></tr></tbody></table>
   </div>
-  <div id="required-services">
-
+  <div id="connectors">
     <div class="section-bar">
-      <h2>Required services</h2>
+      <h2>Connectors</h2>
       <nav>
-        <a href="required-service/create.html" class="small-button">Create required service</a>
+        <a href="connector/create.html" class="small-button">Create connector</a>
       </nav>
     </div>
 
-    <table><tbody><tr><th>Name</th><th>Ports</th><th>Created</th></tr><tr><td><a href="required-service/index.html">inventory</a></td><td>8080</td><td>2 days ago</td></tr><tr><td><a href="required-service/index.html">database</a></td><td>5432, 8080</td><td>2 days ago</td></tr></tbody></table>
+    <table><tbody><tr><th>Name</th><th>Routing key</th><th>Pod selector</th><th>Pod port</th><th>Created</th></tr><tr><td><a href="connector/index.html">orders</a></td><td>orders:8080</td><td>app=orders</td><td>8080</td><td>2 days ago</td></tr></tbody></table>
+  </div>
+  <div id="network-console">
+    <div class="section-bar">
+      <h2>Network console</h2>
+    </div>
+
+    <p>The network console is not currently deployed in this
+      namespace.
+
+    <nav>
+      <a class="small-button">Deploy the network console</a>
+    </nav>
+
+    <p>The network console is available from a remote
+      site.</p>
+
+    <nav>
+      <a class="small-button">Go to the network console</a>
+    </nav>
   </div>
 </div>
 
@@ -181,8 +224,8 @@
 
   <footer>
   <div>
-    <!-- <a style="color: #ccc; font-size: 0.9em; font-style: italic;" href="/skuppernetes/networks-alternate/index.html">Alternate network index</a><br> -->
-    <!-- <a style="color: #ccc; font-size: 0.9em; font-style: italic;" href="/skuppernetes/site/index.html">Remote site</a> -->
+    <!-- <a style="color: #ccc; font-size: 0.9em; font-style: italic;" href="/networks-alternate/index.html">Alternate network index</a><br> -->
+    <!-- <a style="color: #ccc; font-size: 0.9em; font-style: italic;" href="/site/index.html">Remote site</a> -->
   </div>
 </footer>
 

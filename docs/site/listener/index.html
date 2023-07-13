@@ -41,19 +41,52 @@
 
 <div class="title-bar">
   <div>
-    <div><nav class="path-nav"></nav></div>
-    <h1>Skupper</h1>
+    <div><nav class="path-nav"><a href="/site/index.html">Skupper site</a><span class="path-separator">&#8250;</span><a href="/site/listener/index.html">Listener</a></nav></div>
+    <h1>inventory</h1>
   </div>
+
   <nav>
+    <a class="small-button">Go to the network console</a>
   </nav>
 </div>
 
-<p>This namespace is not currently configured to be a Skupper
-site.</p>
+<div class="tabs">
+  <nav>
+    <a href="?tab=details">Details</a>
+    <a href="?tab=yaml">YAML</a>
+  </nav>
 
-<nav>
-  <a href="site/create.html" class="small-button">Create site</a>
-</nav>
+  <div id="details">
+    <div class="section-bar">
+      <h2>Settings</h2>
+      <nav>
+        <a class="small-button">Edit settings</a>
+      </nav>
+    </div>
+
+    <table class="properties"><tbody><tr><td>Name</td><td>inventory</td></tr><tr><td>Routing key</td><td>inventory:8080</td></tr><tr><td>Service name</td><td>inventory</td></tr><tr><td>Service port</td><td>8080</td></tr></tbody></table>
+
+    <div class="section-bar">
+      <h2>Properties</h2>
+    </div>
+
+    <table class="properties"><tbody><tr><td>Created</td><td>2 days ago</td></tr></tbody></table>
+  </div>
+  <div id="yaml">
+    <code><pre>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-listener-inventory
+  namespace: storefront
+  labels:
+    skupper.io/type: listener
+data:
+  routing-key: inventory:8080
+  host: inventory
+  port: 8080
+</pre></code>
+  </div>
+</div>
 
 
       </main>

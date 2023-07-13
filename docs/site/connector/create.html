@@ -18,16 +18,14 @@
     <div>
 
 
-<h1>Create link</h1>
+<h1>Create connector</h1>
 
 <form>
-
-<h2></h2>
 
 <div class="form-entry">
   <div class="entry-title">Name</div>
   <div class="entry-input">
-    <input id="name" type="text" value="warehouse"/>
+    <input id="name" type="text" value="orders"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
@@ -35,9 +33,9 @@
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Token file</div>
+  <div class="entry-title">Routing key</div>
   <div class="entry-input">
-    <input id="token-file" type="text" value="warehouse-token.yaml"/>
+    <input id="routing-key" type="text" value="orders:8080"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
@@ -45,9 +43,19 @@
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Cost</div>
+  <div class="entry-title">Pod selector</div>
   <div class="entry-input">
-    <input id="cost" type="text" value="1"/>
+    <input id="pod-selector" type="text" value="app=orders"/>
+  </div>
+  <div class="entry-info">
+    Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
+  </div>
+</div>
+
+<div class="form-entry">
+  <div class="entry-title">Pod port</div>
+  <div class="entry-input">
+    <input id="port" type="text" value="8080"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.

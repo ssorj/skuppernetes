@@ -18,50 +18,16 @@
     <div>
 
 
-<h1>Equivalent operations</h1>
+<h1>Result</h1>
 
-<form>
+<p>The connector "orders" has been created.</p>
 
-<h2>Skupper CLI</h2>
+<p>You can create listeners in remote sites to access the service
+associated with this connector.</p>
 
-<pre>
-skupper link create warehouse-token-1.yaml --name warehouse --cost 1
-</pre>
-
-<h2>Skupper YAML</h2>
-
-<pre>
-version: 1
-site:
-  name: storefront
-  links:
-    - name: warehouse
-      secret: warehouse-token-1
-      cost: 1
-
-# skupper init -f site.yaml
-</pre>
-
-<h2>Kubernetes custom resource</h2>
-
-<pre>
-apiVersion: skupper.io/v1alpha1
-kind: Link
-metadata:
-  name: warehouse
-  namespace: storefront
-spec:
-  secret: warehouse-token-1
-  cost: 1
-
-# kubectl apply -f resource.yaml
-</pre>
-
-<nav class="form-nav">
-  <a class="big-button" href="../index.html?tab=links">Continue</a>
+<nav style="margin-top: 2em;">
+  <a class="big-button" href="index.html">Continue</a>
 </nav>
-
-</form>
 
 
     </div>

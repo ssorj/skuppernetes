@@ -4,10 +4,10 @@
     <title>Skuppernetes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic|Ubuntu+Mono:400" type="text/css"/>
-    <link rel="stylesheet" href="/skuppernetes/main.css" type="text/css"/>
-    <link rel="icon" href="" type="image/png"/>
+    <link rel="stylesheet" href="/main.css" type="text/css"/>
+    <link rel="icon" href="data:,"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" defer="defer">
-    <script type="text/javascript" src="/skuppernetes/main.js" defer="defer"></script>
+    <script type="text/javascript" src="/main.js" defer="defer"></script>
 
 
 
@@ -18,16 +18,16 @@
     <div>
 
 
-<h1>Edit site</h1>
+<h1>Create listener</h1>
 
 <form>
 
-<h2></h2>
+<h2>Settings</h2>
 
 <div class="form-entry">
   <div class="entry-title">Name</div>
   <div class="entry-input">
-    <input id="name" type="text" value="storefront"/>
+    <input id="name" type="text" value="inventory"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
@@ -35,13 +35,9 @@
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Ingress</div>
+  <div class="entry-title">Routing key</div>
   <div class="entry-input">
-    <select id="ingress">
-      <option value="none">None</option>
-      <option value="route">OpenShift Route</option>
-      <option value="loadbalancer">LoadBalancer</option>
-    </select>
+    <input id="routing-key" type="text" value="inventory:8080"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
@@ -49,24 +45,9 @@
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Console enabled?</div>
+  <div class="entry-title">Service name</div>
   <div class="entry-input">
-    <select id="console-enabled">
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-  </div>
-  <div class="entry-info">
-    Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
-  </div>
-</div>
-
-<h2>Resources </h2>
-
-<div class="form-entry">
-  <div class="entry-title">Routers</div>
-  <div class="entry-input">
-    <input id="routers" type="text" value="1"/>
+    <input id="host" type="text" value="inventory"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
@@ -74,19 +55,9 @@
 </div>
 
 <div class="form-entry">
-  <div class="entry-title">Router CPU request</div>
+  <div class="entry-title">Service port</div>
   <div class="entry-input">
-    <input id="router-cpu" type="text" value="1.0"/>
-  </div>
-  <div class="entry-info">
-    Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
-  </div>
-</div>
-
-<div class="form-entry">
-  <div class="entry-title">Router CPU limit</div>
-  <div class="entry-input">
-    <input id="router-cpu-limit" type="text" value="1.0"/>
+    <input id="port" type="text" value="8080"/>
   </div>
   <div class="entry-info">
     Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.
@@ -94,7 +65,7 @@
 </div>
 
 <nav class="form-nav">
-  <a class="big-button" href="edit-interlude.html">Submit</a>
+  <a class="big-button" href="create-result.html">Submit</a>
 </nav>
 
 </form>

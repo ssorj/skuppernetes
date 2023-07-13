@@ -1,5 +1,7 @@
 import os
 
+site.output_dir = "docs"
+
 site_url = os.environ.get("SITE_URL", "")
 
 def path_nav(page):
