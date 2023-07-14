@@ -48,11 +48,11 @@ def cell(column_index, value):
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Status", "Cost", "Created"
+headings = "Name", "Status", "Cost"
 
 data = (
-    ("warehouse", "OK", 1, "1/8/2020"),
-    ("headquarters", "Error: Unreachable", 2, "3/15/2020"),
+    ("warehouse", "OK", 1),
+    ("headquarters", "Error: Unreachable", 2),
 )
 
 link_table = html_table(data, headings=headings, cell_fn=cell)
@@ -93,10 +93,10 @@ def cell(column_index, value):
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Routing key", "Pod selector", "Pod port", "Created"
+headings = "Name", "Routing key", "Pod selector", "Pod port"
 
 data = (
-    ("orders", "orders:8080", "app=orders", "8080", "2 days ago"),
+    ("orders", "orders:8080", "app=orders", "8080"),
 )
 
 connector_table = html_table(data, headings=headings, cell_fn=cell)
@@ -124,12 +124,12 @@ def cell(column_index, value):
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Routing key", "Service name", "Service port", "Created"
+headings = "Name", "Routing key", "Service name", "Service port"
 
 data = (
-    ("inventory", "inventory:8080", "inventory", "8080", "2 days ago"),
-    ("database", "database:5432", "database", "5432", "2 days ago"),
-    ("database-2", "database:8080", "database", "8080", "2 days ago"),
+    ("inventory", "inventory:8080", "inventory", "8080"),
+    ("database", "database:5432", "database", "5432"),
+    ("database-2", "database:8080", "database", "8080"),
 )
 
 listener_table = html_table(data, headings=headings, cell_fn=cell)
@@ -148,11 +148,3 @@ props = (
 )
 
 listener_properties = html_table(props, class_="properties")
-
-headings = "Port", "Name", "Protocol", "Created"
-
-data = (
-    ("8080", "http",  "TCP", "2 days ago"),
-)
-
-listener_ports_table = html_table(data, headings=headings)
