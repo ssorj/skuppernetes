@@ -6,7 +6,8 @@ body_template: config/excursion.html
 
 <p>The token "storefront" has been created.</p>
 
-<p>You can use this token to create links from remote sites.</p>
+<p>You can use this token to create <b>links</b> from remote
+sites.</p>
 
 <nav style="margin-top: 2em;">
   <a class="big-button" href="../index.html?tab=tokens">Continue</a>

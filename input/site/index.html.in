@@ -9,7 +9,7 @@ title: Skupper site
   </div>
 
   <nav>
-    <a class="small-button">Go to the network console</a>
+    <a class="small-button">Skupper network console &nbsp; <span class="material-icons-outlined small">open_in_new</span></a>
   </nav>
 </div>
 
@@ -22,7 +22,7 @@ title: Skupper site
     <a href="?tab=tokens">Tokens</a>
     <a href="?tab=listeners">Listeners</a>
     <a href="?tab=connectors">Connectors</a>
-    <a href="?tab=network-console">Network console</a>
+    <!-- <a href="?tab=network-console">Network console</a> -->
   </nav>
 
   <div id="overview">

@@ -6,9 +6,10 @@ body_template: config/excursion.html
 
 <p>The connector "orders" has been created.</p>
 
-<p>You can create listeners in remote sites to access the service
-associated with this connector.</p>
+<p>You can create <b>listeners</b> in remote sites to access the
+service associated with this connector.  Listeners and connectors are
+linked by a matching <b>routing key</b>.</p>
 
 <nav style="margin-top: 2em;">
-  <a class="big-button" href="index.html">Continue</a>
+  <a class="big-button" href="../index.html?tabs=connectors">Continue</a>
 </nav>

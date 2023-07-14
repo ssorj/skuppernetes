@@ -6,6 +6,10 @@ body_template: config/excursion.html
 
 <p>The listener "inventory" has been created.</p>
 
+<p>You can create <b>connectors</b> in remote sites to forward
+connections on this listener to remote workloads.  Listeners and
+connectors are linked by a matching <b>routing key</b>.</p>
+
 <nav style="margin-top: 2em;">
-  <a class="big-button" href="index.html">Continue</a>
+  <a class="big-button" href="../index.html?tab=listeners">Continue</a>
 </nav>

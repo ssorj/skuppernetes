@@ -6,10 +6,11 @@ body_template: config/excursion.html
 
 <p>The namespace "storefront" is now a Skupper site.</p>
 
-You can link this site to remote sites, forming a Skupper application network.</p>
+<p>You can link this site to remote sites, forming a Skupper
+network.</p>
 
-You can access services at remote sites from this namespace, and you
-can expose services from this namespace to remote sites.
+<p>Once you have a network, you can expose services in this namespace
+and access services in remote sites.</p>
 
 <nav style="margin-top: 2em;">
   <a class="big-button" href="index.html">Continue</a>
