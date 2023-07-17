@@ -57,11 +57,11 @@ data = (
 
 link_table = html_table(data, headings=headings, cell_fn=cell)
 
-headings = "Name", "Created"
+headings = ("Name",)
 
 data = (
-    ("delivery-truck-201", "10/18/2021"),
-    ("delivery-truck-202", "11/8/2021"),
+    ("delivery-truck-201",),
+    ("delivery-truck-202",),
 )
 
 incoming_link_table = html_table(data, headings=headings)

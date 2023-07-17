@@ -223,6 +223,7 @@ select {
     font: inherit;
     background: inherit;
     border: 1px solid #999;
+    appearance: none;
 }
 
 XXXsection {
@@ -613,4 +614,13 @@ form h2 {
 
 form pre {
     margin-top: -0.4em;
+}
+
+/* --- */
+
+.info-box {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: #eee;
+    border-radius: 0.4em;
 }

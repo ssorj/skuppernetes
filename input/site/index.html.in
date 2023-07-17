@@ -78,9 +78,9 @@ title: Skupper site
     <h2>More information</h2>
 
     <ul>
-      <li><a>Creating sites using the command line</a></li>
-      <li><a>Linking sites using the command line</a></li>
-      <li><a>Exposing services using the command line</a></li>
+      <li><a href="https://skupper.io/docs/cli/index.html#creating-using-cli">Creating sites using the command line</a></li>
+      <li><a href="https://skupper.io/docs/cli/index.html#linking-sites">Linking sites using the command line</a></li>
+      <li><a href="https://skupper.io/docs/cli/index.html#exposing-services-ns">Exposing services using the command line</a></li>
     </ul>
   </div>
   <div id="details">
@@ -103,6 +103,12 @@ title: Skupper site
     <code><pre>{{page.include("resources/site.yaml")}}</pre></code>
   </div>
   <div id="links">
+    <div class="info-box">
+      <span class="material-icons-outlined">info</span> &nbsp; Links enable
+      communication between sites.  Once sites are linked, they form a
+      Skupper network.
+    </div>
+
     <div class="section-bar">
       <h2>Links</h2>
       <nav>
@@ -119,6 +125,11 @@ title: Skupper site
     {{incoming_link_table}}
   </div>
   <div id="tokens">
+    <div class="info-box">
+      <span class="material-icons-outlined">info</span> &nbsp; Tokens
+      are used to create links.
+    </div>
+
     <div class="section-bar">
       <h2>Tokens</h2>
       <nav>
@@ -129,6 +140,11 @@ title: Skupper site
     {{token_table}}
   </div>
   <div id="listeners">
+    <div class="info-box">
+      <span class="material-icons-outlined">info</span> &nbsp;
+      Listeners accept connections and forward them to services
+      running in remote sites.
+    </div>
 
     <div class="section-bar">
       <h2>Listeners</h2>
@@ -140,6 +156,11 @@ title: Skupper site
     {{listener_table}}
   </div>
   <div id="connectors">
+    <div class="info-box">
+      <span class="material-icons-outlined">info</span> &nbsp;
+      Connectors bind connections from remote sites to local services.
+    </div>
+
     <div class="section-bar">
       <h2>Connectors</h2>
       <nav>
