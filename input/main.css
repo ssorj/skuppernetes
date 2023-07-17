@@ -621,6 +621,6 @@ form pre {
 .info-box {
     padding: 1em;
     margin-bottom: 1em;
-    background-color: #eee;
+    background-color: rgb(247, 247, 247);
     border-radius: 0.4em;
 }
