@@ -142,7 +142,7 @@ title: Skupper site
   <div id="listeners">
     <div class="info-box">
       <span class="material-icons-outlined">info</span> &nbsp;
-      Listeners accept connections and forward them to services
+      Listeners accept connections and route them to services
       running in remote sites.
     </div>
 
@@ -158,7 +158,7 @@ title: Skupper site
   <div id="connectors">
     <div class="info-box">
       <span class="material-icons-outlined">info</span> &nbsp;
-      Connectors bind connections from remote sites to local services.
+      Connectors route connections from remote sites to local services.
     </div>
 
     <div class="section-bar">
